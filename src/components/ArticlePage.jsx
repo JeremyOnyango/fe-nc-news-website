@@ -3,12 +3,11 @@ import { useApiRequest } from "../UseApiRequest";
 import { getArticle } from "../Api";
 import { Loading } from "./Loading";
 import { Error } from "./Error";
-import { Link } from "react-router";
 
-export const ArticleCard = ({article}) => {
+export const ArticlePage = () => {
     const {article_id} = useParams();
-    const {isLoading, error} = useApiRequest(getArticle, article_id)
-    
+    const {data: article, isLoading, error} = useApiRequest(getArticle, article_id)
+
     if (isLoading){
         return <Loading/>
     }
@@ -17,11 +16,10 @@ export const ArticleCard = ({article}) => {
         return <Error error={error}/>
     }
 
-const {title, topic, author, created_at, votes, comment_count, article_img_url} = article
+    const {title, topic, author, body, created_at, votes, comment_count, article_img_url} = article
 
     return(
         <section className="articles">
-            <Link to={`/articles/${article.article_id}`}>
             <div className="article-container">
                 <div className="topic-container">
             <img src={article_img_url} alt={title} className="pic"/>
@@ -31,11 +29,12 @@ const {title, topic, author, created_at, votes, comment_count, article_img_url} 
             <div className="article-text">
             <h3>{title}</h3>
             <p>By: {author}</p>
+            <p>{body}</p>
             <p>No. of Comments: {comment_count} Votes: {votes} </p>
+            <p>Released on: {created_at}</p>
             </div>
 
             </div>
-            </Link>
         </section>
     )
 }

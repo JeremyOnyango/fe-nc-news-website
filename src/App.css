@@ -5,17 +5,6 @@
   text-align: center;
 }
 
-.dashboard {
-  color: white;
-  height: 6em;
-  background-color: #D91921;
-  flex-grow: 1;
-  padding: 0.5em;
-  margin: 0;
-}
-/* .logo:hover {
-  filter: drop-shadow(0 0 2em #fcfcfdaa);
-} */
 
 @keyframes logo-spin {
   from {
@@ -40,11 +29,11 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -56,9 +45,19 @@ a {
   color: white;
   text-decoration: inherit;
 }
-/* a:hover {
-  color: #535bf2;
-} */
+
+a:hover {
+  color: black;
+}
+
+.dashboard {
+  color: white;
+  height: 6em;
+  background-color: #D91921;
+  flex-grow: 1;
+  padding: 0.5em;
+  margin: 0;
+}
 
 body {
   margin: 0;
@@ -86,11 +85,28 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: red;
+  border-color: black;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.header {
+  margin-bottom: 0px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.navbar:hover{
+  color: #242424;
+}
+
+.searchbar {
+  margin-top: -100px;
+  margin-bottom: 5px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -102,22 +118,58 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #ddd8d8;
   }
 }
+
+section {
+  padding: 10px;
+  margin: 20px;
+  box-shadow: 5px 8px #88888879;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.article-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 10px;
+  }
+
 .articles {
   border-width: 3px;
   border-style: solid;
   border-radius: 50px;
   flex-grow: 1;
   width: 100%;
-  padding: 2px;
-  margin: 10px
+  padding: 10px;
+  margin: 20px;
+  float: right;
+}
+
+.article-text{
+  flex-grow: 1;
+  line-height: 1.6;
+  padding: 10px;
 }
 
 .pic {
-  height: 10em;
-  width: 8em;
-  padding: 1.5em;
-  float: left;
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  display: block;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+
+.topic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-center;
 }

@@ -14,7 +14,7 @@ export const SearchBar = ({setSearchTerm}) => {
     }
 
     return(
-    <form onSubmit={handleSubmit}>
+    <form  className="searchbar dashboard" onSubmit={handleSubmit}>
         <label>
             <input type="text" onChange={handleChange} value={searchInput}/>
         </label>

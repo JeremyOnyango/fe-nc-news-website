@@ -5,7 +5,7 @@ import { ArticleList } from './components/ArticleList'
 import { NavBar } from './components/NavBar'
 import { SearchBar } from './components/SearchBar'
 import {Routes, Route} from "react-router"
-import { ArticleCard } from './components/ArticleCard'
+import { ArticlePage } from './components/ArticlePage'
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -18,7 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<ArticleList searchTerm={searchTerm}/>}/>
         <Route path="/home" element={<ArticleList searchTerm={searchTerm}/>}/>
-        <Route path="/articles/:article_id" element={<ArticleCard/>}/>
+        <Route path="/articles" element={<ArticleList searchTerm={searchTerm}/>}/>
+        <Route path="/articles/:article_id" element={<ArticlePage/>}/>
       </Routes>
     </div>
   )
