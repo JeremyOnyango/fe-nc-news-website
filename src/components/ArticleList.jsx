@@ -1,6 +1,6 @@
 import { ArticleCard } from "./ArticleCard"
 import { getArticles, getSearchedArticles } from "../Api"
-import { useApiRequest } from "./UseApiRequest"
+import { useApiRequest } from "../UseApiRequest"
 import { Error } from "./Error"
 import { Loading } from "./Loading"
 
@@ -19,7 +19,7 @@ export const ArticleList = ({searchTerm}) => {
         <ul>
             <p>Results: {articles.length}</p>
             {articles.map((article) => {
-                return <ArticleCard article={article} key={article.article_id}/>
+                return <ArticleCard article={article} key={article.article_id} className="container"/>
             })}
         </ul>
     )

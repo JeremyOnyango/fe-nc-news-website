@@ -15,8 +15,8 @@ export const getArticles = () => {
 
 export const getArticle = (article_id) => {
     return ncNewsApi.get(`/articles/${article_id}`)
-    .then(({data}) => {
-        return data
+    .then(({data : {article}}) => {
+        return article
     })
     .catch((error) =>
         console.log(error))
