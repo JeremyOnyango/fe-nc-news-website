@@ -1,6 +1,7 @@
 import { useParams } from "react-router"
 import { useApiRequest } from "../UseApiRequest";
 import { getArticle } from "../Api";
+import { CommentList } from "./CommentList";
 import { Loading } from "./Loading";
 import { Error } from "./Error";
 import { Link } from "react-router";
@@ -23,7 +24,7 @@ const {title, topic, author, created_at, votes, comment_count, article_img_url} 
         <section className="articles">
             <Link to={`/articles/${article.article_id}`}>
             <div className="article-container">
-                <div className="topic-container">
+            <div className="topic-container">
             <img src={article_img_url} alt={title} className="pic"/>
             <p> Topic: {topic}</p>
             </div>
@@ -31,11 +32,12 @@ const {title, topic, author, created_at, votes, comment_count, article_img_url} 
             <div className="article-text">
             <h3>{title}</h3>
             <p>By: {author}</p>
-            <p>No. of Comments: {comment_count} Votes: {votes} </p>
+            <p>Comments: {comment_count} Votes: {votes}</p>
             </div>
 
             </div>
             </Link>
+
         </section>
     )
 }

@@ -19,7 +19,7 @@ export const ArticleList = ({searchTerm}) => {
         <ul>
             <p>Results: {articles.length}</p>
             {articles.map((article) => {
-                return <ArticleCard article={article} key={article.article_id} className="container"/>
+                return <ArticleCard article={article} key={article.article_id} className="article-container"/>
             })}
         </ul>
     )

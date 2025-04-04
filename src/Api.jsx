@@ -31,3 +31,12 @@ export const getSearchedArticles = (searchTerm) => {
         console.log(error))
 }
 
+export const getComments = (article_id) => {
+    return ncNewsApi.get(`/articles/${article_id}/comments?sort_by=created_at`)
+    .then(({data: {comments}}) => {
+        return comments
+    })
+    .catch((error) =>
+        console.log(error))
+}
+
